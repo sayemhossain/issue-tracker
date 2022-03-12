@@ -32,13 +32,11 @@ const closeIssue = (id) => {
 };
 
 const deleteIssue = (id) => {
-  // const issuesList = document.getElementById("issuesList");
   const issues = JSON.parse(localStorage.getItem("issues"));
   const remainingIssues = issues.filter((issue) => issue.id != id);
   console.log(remainingIssues);
   localStorage.setItem("issues", JSON.stringify(remainingIssues));
-  // fetchIssues();
-  // issuesList.innerHTML = "";
+  fetchIssues();
 };
 
 const fetchIssues = () => {
